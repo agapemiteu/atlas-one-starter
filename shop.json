@@ -1,0 +1,15 @@
+{
+  "name": "Kano Fabrics",
+  "city": "Kano",
+  "products": [
+    { "name": "Ankara print, 6 yards", "price_naira": 18000 },
+    { "name": "Aso-oke set", "price_naira": 45000 },
+    { "name": "Plain lace, 5 yards", "price_naira": 32000 },
+    { "name": "Adire tie-dye, 2 yards", "price_naira": 9500 }
+  ],
+  "delivery": "We deliver to all 36 states and Abuja within 3 to 5 working days.",
+  "payment": "Bank transfer, card, or pay on delivery in Kano, Abuja and Lagos.",
+  "returns": "Unused fabric can be returned within 7 days for a full refund.",
+  "hours": "Monday to Saturday, 9am to 6pm.",
+  "contact": "WhatsApp 0800 000 0000 (example number)"
+}

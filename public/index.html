@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kano Fabrics</title>
+  <style>
+    body { margin: 0; font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; color: #111; background: #fff; }
+    main { max-width: 720px; margin: 0 auto; padding: 48px 20px; }
+    h1 { font-size: 2rem; letter-spacing: -0.02em; margin: 0; }
+    .muted { color: #666; }
+    ul { padding: 0; list-style: none; display: grid; gap: 8px; }
+    li { display: flex; justify-content: space-between; border: 1px solid #eee; border-radius: 10px; padding: 12px 14px; }
+    section { margin-top: 32px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Kano Fabrics</h1>
+  <p class="muted">Quality fabrics from Kano, delivered across Nigeria.</p>
+
+  <section>
+    <h2>Products</h2>
+    <ul id="products"></ul>
+  </section>
+
+  <section>
+    <h2>Questions</h2>
+    <p id="faq" class="muted"></p>
+  </section>
+
+  <!-- Your N-ATLaS feature goes here: ask your coding agent to add it through Atlas One. -->
+  <section id="assistant"></section>
+</main>
+<script>
+  fetch("/api/shop").then((r) => r.json()).then((shop) => {
+    document.getElementById("products").innerHTML = shop.products
+      .map((p) => `<li><span>${p.name}</span><b>₦${p.price_naira.toLocaleString()}</b></li>`).join("");
+    document.getElementById("faq").textContent = [shop.delivery, shop.payment, shop.returns, shop.hours].join(" ");
+  });
+</script>
+</body>
+</html>
